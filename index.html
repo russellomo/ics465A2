@@ -11,11 +11,66 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
+
   <style>
-  body{
-    background-color: #424242;
-  }
+    body{
+      background-color: #424242;
+    }
+    [tooltip]{
+      position:relative;
+      display:inline-block;
+    }
+    [tooltip]::before {
+      content: "";
+      position: absolute;
+      top:-6px;
+      left:50%;
+      transform: translateX(-50%);
+      border-width: 4px 6px 0 6px;
+      border-style: solid;
+      border-color: rgba(0,0,0,0.7) transparent transparent transparent;
+      z-index: 99;
+      opacity:0;
+    }
+    [tooltip-position='top']::before{
+      left:50%;
+    }
+    [tooltip-position='bottom']::before{
+      top:100%;
+      margin-top:8px;
+      transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+    }
+    [tooltip]::after {
+        content: attr(tooltip);
+        position: absolute;
+        left:50%;
+        top:-6px;
+        transform: translateX(-50%)   translateY(-100%);
+        background: rgba(0,0,0,0.7);
+        text-align: center;
+        color: #fff;
+        padding:4px 2px;
+        font-size: 12px;
+        min-width: 80px;
+        border-radius: 5px;
+        pointer-events: none;
+        padding: 4px 4px;
+        z-index:99;
+        opacity:0;
+    }
+    [tooltip-position='top']::after{
+      left:50%;
+    }
+    [tooltip-position='bottom']::after{
+      top:100%;
+      margin-top:8px;
+      transform: translateX(-50%) translateY(0%);
+    }
+    [tooltip]:hover::after,[tooltip]:hover::before {
+       opacity:1
+    }
   </style>
+
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
@@ -36,34 +91,34 @@
         </li>
       </ul>
 	  <span data-toggle="modal" data-target="#submitModal">
-		  <button type="button" class="btn btn-secondary btn-circle" data-toggle="tooltip" data-placement="top" title="Submit a story!">
+		  <button type="button" class="btn btn-secondary btn-circle" tooltip="Submit a Story!" tooltip-position="bottom">
 			+
 		  </button>
 	  </span>
     </div>
   </nav>
-  
-  <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" 
+
+  <div class="modal fade" id="submitModal" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-           
-       
+
+
             <!-- Modal Body -->
             <div class="modal-body">
-                
+
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
 					<div class="col-sm-4">
 						<label>Title</label>
 						<i class="fa fa-question-circle-o " data-toggle="tooltip" data-placement="right" title="Max Characters: 30"></i></label>
 					</div>
-					
+
                     <div class="col-sm-10">
                         <input  class="form-control" placeholder="Title"/>
                     </div>
                   </div>
-				  
+
                   <div class="form-group">
                     <div class="col-sm-4">
 						<label>Your Story</label>
@@ -74,7 +129,7 @@
 						</textarea>
                     </div>
                   </div>
-				  
+
 				  <div class="form-group">
 				   <div class="col-sm-4">
 						<label>Upload Photo</label>
@@ -88,9 +143,9 @@
 				  </div>
 
                 </form>
-                
+
             </div>
-            
+
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
@@ -148,7 +203,7 @@
         <H2 class="display-4" style="text-align: center">Top Animal Stories</H2>
       </br>
       <div class="row" style="text-align: center; display: inline-block">
-        <img src="pet1.jpg" class="rounded-circle m-4" width="200px" height="200px" data-toggle="tooltip" data-placement="top" title="Ollie">
+        <img src="pet1.jpg" class="rounded-circle m-4" width="200px" height="200px" tooltip="Submit a Story!" tooltip-position="bottom">
         <img src="pet2.jpg" class="rounded-circle m-4" width="200px" height="200px" data-toggle="tooltip" data-placement="top" title="Baker">
       </div>
       </br>
