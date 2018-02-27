@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <style>
@@ -46,29 +47,45 @@
      aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Submit Your Story</h4>
-            </div>
-            
+           
+       
             <!-- Modal Body -->
             <div class="modal-body">
                 
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
-                    <label  class="col-sm-2">Title</label>
+					<div class="col-sm-4">
+						<label>Title</label>
+						<i class="fa fa-question-circle-o " data-toggle="tooltip" data-placement="right" title="Max Characters: 30"></i></label>
+					</div>
+					
                     <div class="col-sm-10">
                         <input  class="form-control" placeholder="Title"/>
                     </div>
                   </div>
+				  
                   <div class="form-group">
-                    <label class="col-sm-2 control-label" >Story</label>
+                    <div class="col-sm-4">
+						<label>Your Story</label>
+						<i class="fa fa-question-circle-o " data-toggle="tooltip" data-placement="right" title="Max Characters: 250"></i></label>
+					</div>
                     <div class="col-sm-10">
-                        <textarea rows="5" class="form-control" id="inputPassword3" placeholder="Once upon a time...">
+                        <textarea rows="5" class="form-control">
 						</textarea>
                     </div>
                   </div>
+				  
+				  <div class="form-group">
+				   <div class="col-sm-4">
+						<label>Upload Photo</label>
+						<i class="fa fa-question-circle-o " data-toggle="tooltip" data-placement="right" title="Min. Resolution: 640 x 480"></i></label>
+					</div>
+					<div class="col-sm-4">
+						<button type="button" class="btn btn-default">
+								Choose File
+						</button>
+					</div>
+				  </div>
 
                 </form>
                 
@@ -146,6 +163,7 @@
 </body>
 
 </html>
+
 
 <script>
     $(function () {
