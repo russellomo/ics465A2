@@ -1,13 +1,3 @@
-<!--
-Assignment: Programming 1 (Week 2)
-Date: February 26, 2018
-Class: ICS465
-Group Members:
-  Brandon Ganeko
-  Christopher Jaro
-  Daniel Tan
-  Russel Omo
- -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,12 +10,23 @@ Group Members:
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#accordion").accordion();
+        });
+    </script>
 </head>
+<style>
+    body {
+        background-color: #424242;
+    }
+</style>
 
 <body>
-
-    <!-- Top Navigation Bar -->
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="">
@@ -92,7 +93,7 @@ Group Members:
                             </div>
                             <div class="col-sm-4">
                                 <button type="button" class="btn btn-default">
-								Choose File
+                                Choose File
                 </button>
                             </div>
                         </div>
@@ -115,96 +116,44 @@ Group Members:
     </div>
 
     <div class="container">
-
-        <!-- Main Page Image Carousel - 3 Items -->
-        <div id="carouselMainPage" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselMainPage" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselMainPage" data-slide-to="1"></li>
-                <li data-target="#carouselMainPage" data-slide-to="2"></li>
-            </ol>
-
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="car1-grad.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Welcome to our site</h1>
-                        <h2>We share our adoption success stories here.<h2>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img class="d-block w-100" src="car2-grad.jpg" alt="Second slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Every animal has their own story.</h1>
-            <h2>Take time out of your day and learn more about these animals in need!</h2>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="car3-grad.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Adopt today and share your story!</h1>
-                    </div>
-                </div>
-            </div>
-
-            <a class="carousel-control-prev" href="#carouselMainPage" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-            <a class="carousel-control-next" href="#carouselMainPage" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-
-        </div>
-
-        <!-- Main Content Body -->
-        <div class="card" style="text-align: center;">
-            <div class="container mt-3 mb-3">
-
-                <!-- Top Animal Stories Section -->
+        <div class="card" style="text-align: center; padding-top:50px">
+            <div class="container mt-3 mt-3">
                 <H2 class="display-4" style="text-align: center">Top Animal Stories</H2>
-                <hr />
-                </br>
-
-                <div class="row" style="text-align: center; display: inline-block">
-                    <a href="">
-            <img src="pet1.jpg" class="rounded-circle m-4" width="200px" height="200px" data-toggle="tooltip" data-placement="top" title="Ollie">
-          </a>
-
-                    <a href="">
-            <img src="pet2.jpg" class="rounded-circle m-4" width="200px" height="200px" data-toggle="tooltip" data-placement="top" title="Baker">
-          </a>
-                </div>
-
                 </br>
                 <div class="row" style="text-align: center; display: inline-block">
-                    <a href="">
-            <img src="pet3.jpg" class="rounded-circle m-4" width="200px" height="200px" data-toggle="tooltip" data-placement="top" title="Luna">
-          </a>
+                    <div id="accordion">
+                        <h3>About</h3>
+                        <div>
+                            <p>
+                                The Hawaiian Humane Society was organized in 1883. In 1897, Helen Kinau Wilder was given the authority to enforce animal cruelty laws.She was appointed a special constable by the Marshall of the Republic of Hawaii. She and her friends pooled their resources
+                                to pay a salary to hire Chang Apana, our first officer to investigate animal crimes, who inspired author Earl der Biggers’ popular Charlie Chan series of detective novels. Our welfare efforts aimed more at work animals
+                                than pet cats or dogs. Even then, education was a top priority. In a time when animal information was very basic, it fell to those founding members to raise public awareness about the proper care, feeding and humane treatment
+                                of animals. The vision of those early pioneers guides the Society’s efforts today. The Hawaiian Humane Society’s mission is a joyful one full of challenges and opportunities. Since 1942, our busy shelter in the heart of
+                                Moiliili has become a community hub for animal lovers featuring programs and services focused on strengthening the human-animal bond: rescuing the abused, engaging volunteers, fighting for better laws and caring for more
+                                than 20,000 animals a year. As an animal welfare organization, the Society is also very much a people business; educating young and old and working to find solutions to the challenges of a diverse and fast-growing community.
+                                We are Oahu’s only open-admissions shelter open every day of the year. We believe there must be a place that all animals are welcome. We are not affiliated with any other island humane society or HSUS or ASPCA. We help
+                                local animals with donations – gifts made by friends like you.
+                            </p>
+                        </div>
+                        <h3>Phone</h3>
+                        <div>
+                            <p>
+                                (808) 356-2200
+                            </p>
+                        </div>
+                        <h3>Address</h3>
+                        <div>
+                            <p>
+                                2700 Waialae Avenue Honolulu, Hawaii 96826
+                            </p>
+                        </div>
+                    </div>
 
-                    <a href="">
-            <img src="pet4.jpg" class="rounded-circle m-4" width="200px" height="200px" data-toggle="tooltip" data-placement="top" title="Goliath">
-          </a>
-
-                    <a href="">
-            <img src="pet5.jpg" class="rounded-circle m-4" width="200px" height="200px" data-toggle="tooltip" data-placement="top" title="Snowbell">
-          </a>
                 </div>
-
+                </br>
             </div>
         </div>
     </div>
 </body>
 
 </html>
-
-
-<script>
-    $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
